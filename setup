@@ -3,6 +3,10 @@
 SETUP_DIR=`dirname ${0}`
 . ${SETUP_DIR}/vars.sh
 
+[ -d "${BOXES_DIR}" ] || mkdir "${BOXES_DIR}" || { echo "Can't create boxes dir '${BOXES_DIR}'"; exit 1; }
+[ -f "${GUESTADDITIONS}" ] || { echo "Missing '${GUESTADDITIONS}'!"; exit 1; }
+[ -f "${INSTALLER}" ] || { echo "Missing '${INSTALLER}'!"; exit 1; }
+
 VBoxManage createvm --name ${NAME} --ostype ${TYPE} --register
 
 VBoxManage modifyvm ${NAME} \
