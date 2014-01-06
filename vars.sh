@@ -1,7 +1,18 @@
 NAME=centos65-x86_64
 TYPE=RedHat_64
-INSTALLER="./isos/CentOS-6.5-x86_64-minimal.iso"
-GUESTADDITIONS="./isos/VBoxGuestAdditions-4.3.6.iso"
-HDD="${HOME}/VirtualBox VMs/${NAME}/main.vdi"
-HDD_SWAP="${HOME}/VirtualBox VMs/${NAME}/swap.vdi"
+GUESTADDITIONS_VERSION="4.3.6"
+CENTOS_VERSION="6.5"
+
+: ${ISOS_DIR:=isos}
+: ${BOXES_DIR:=boxes}
+: ${VM_BASE:=${HOME}/VirtualBox VMs}
+VM_DIR="${VM_BASE}/${NAME}"
+
+INSTALLER_ISO="CentOS-${CENTOS_VERSION}-x86_64-minimal.iso"
+GUESTADDITIONS_ISO="VBoxGuestAdditions-${GUESTADDITIONS_VERSION}.iso"
+
+INSTALLER="${ISOS_DIR}/${INSTALLER_ISO}"
+GUESTADDITIONS="${ISOS_DIR}/${GUESTADDITIONS_ISO}"
+HDD="${VM_DIR}/main.vdi"
+HDD_SWAP="${VM_DIR}/swap.vdi"
 NATNET=10.0.2.0/24
