@@ -1,5 +1,7 @@
 #!/bin/sh
-source vars.sh
+
+SETUP_DIR=`dirname ${0}`
+. ${SETUP_DIR}/vars.sh
 
 set -x
 
