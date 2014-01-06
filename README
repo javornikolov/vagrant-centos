@@ -63,6 +63,10 @@ well:
 
   HDD="${HOME}/VirtualBox VMs/${NAME}/${NAME}.vmdk"
 
+If you wish to override ISOS_DIR, BOXES_DIR or VM_BASE - you can do it by
+just setting the relevant environment variable. E.g.:
+ ISOS_DIR=/downloads/isos BOXES_DIR=/tmp/myboxes ./setup
+
 If you wished to be emailed with the various logs the build produces
 see the `ks.cfg` file and find the line:
 
