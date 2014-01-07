@@ -1,6 +1,6 @@
 #!/bin/sh -e
 
-. "`dirname ${0}`/vars.sh"
+. ./vars.sh
 
 cmd="vagrant package --base ${NAME} --output '${BOXES_DIR}/${NAME}-`date +%Y%m%d`.box'"
 echo "Running [$cmd]..."
